@@ -17,7 +17,17 @@ public class EmpleadoPorHoras extends Empleado {
 
     @Override
     public double calcularSalario() {
-        double salario = super.getHorasTrabajadas() * super.getTarifaHora();
+        double salario = getHorasTrabajadas() * getTarifaHora();
+        switch (getDepartamento()) {
+            case "Sistemas":
+                salario += 20;
+                break;
+            case "Contabilidad":
+                salario += 10;
+                break;
+            default:
+                break;
+        }
         return salario;
     }
 

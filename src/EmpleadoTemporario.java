@@ -15,6 +15,29 @@ public class EmpleadoTemporario extends Empleado {
         this.genero = genero;
     }
 
+    @Override
+    public double calcularSalario() {
+        double salarioTotal = salarioBase;
+        if (horasTrabajadas >= 0) {
+            if (horasTrabajadas > 40) {
+                salarioTotal += (horasTrabajadas - 40) * 50;
+            }
+        } else {
+            throw new IllegalArgumentException("Las horas trabajadas deben ser mayor o igual a 0");
+        }
+        switch (departamento) {
+            case "Sistemas":
+                salarioTotal += 20;
+                break;
+            case "Contabilidad":
+                salarioTotal += 10;
+                break;
+            default:
+                break;
+        }
+        return salarioTotal;
+    }
+
     public void imprimirDetalles() {
         System.out.println("Nombre: " + nombre);
         System.out.println("Genero: " + super.getNombre());
