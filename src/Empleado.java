@@ -16,6 +16,35 @@ public abstract class Empleado {
         this.departamento = departamento;
         this.genero = genero;
     }
+        protected void validarDatos(){
+        if(salarioBase <= 0){
+            throw new IllegalArgumentException("El salario debe ser mayor o igual a 0");
+        }
+
+        if (horasTrabajadas < 0){
+            throw new IllegalArgumentException("Las horas trabajadas deben ser mayor o igual a 0");
+        }
+    }
+
+    protected double calcularHorasExtra(){
+        if (horasTrabajadas > 40) {
+        return (horasTrabajadas - 40) * 50;
+        }
+        return 0;
+
+    }
+
+    protected double calcularBonoDepartamento() {
+    switch (departamento) {
+        case "Sistemas":
+            return 20;
+        case "Contabilidad":
+            return 10;
+        default:
+            return 0;
+        }
+    }
+
 
     public abstract double calcularSalario();
 
