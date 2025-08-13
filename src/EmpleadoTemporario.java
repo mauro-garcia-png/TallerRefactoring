@@ -30,14 +30,6 @@ public class EmpleadoTemporario extends Empleado {
         return salarioTotal;
     }
 
-    public void imprimirDetalles() {
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Genero: " + getGenero());
-        System.out.println("Salario: " + getSalarioBase());
-        System.out.println("Horas trabajadas: " + getHorasTrabajadas());
-        System.out.println("Departamento: " + getDepartamento());
-        System.out.println("Meses de contrato: " + mesesContrato);
-    }
 
     // Más metodos
 }
