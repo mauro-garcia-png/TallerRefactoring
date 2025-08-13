@@ -3,8 +3,9 @@ public class EmpleadoTemporario extends Empleado {
 
     public EmpleadoTemporario(String nombre, double salarioBase, int horasTrabajadas, String departamento,
             int mesesContrato, String genero) {
-        super(nombre, salarioBase, horasTrabajadas, 0, departamento, genero);
-        this.mesesContrato = mesesContrato; // La tecnica de refactorizacion "Pull Up Constructor Body" ya fue aplicada por la tecnica "pull up field"
+        super(nombre, salarioBase, horasTrabajadas, departamento, genero);
+        this.mesesContrato = mesesContrato; // La tecnica de refactorizacion "Pull Up Constructor Body" ya fue aplicada
+                                            // por la tecnica "pull up field"
     }
 
     @Override
@@ -29,7 +30,6 @@ public class EmpleadoTemporario extends Empleado {
         }
         return salarioTotal;
     }
-
 
     // Más metodos
 }
